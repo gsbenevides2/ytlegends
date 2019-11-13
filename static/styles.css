@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+*{
+ font-family: 'Lato', sans-serif;
+ color:white;
+ background-color:#121212;
+}
+body{
+ margin:0px;
+ padding:0px;
+ display:flex;
+ transition:all 0.5s;
+ flex-direction: column;
+}
+.topAppBar{
+ transition:all 0.5s;
+ padding:20px 0px 20px 0px;
+ color:#ff0000;
+ width:100%;
+ display:flex;
+ background-color:#212121;
+ justify-content:space-around;
+ box-shadow:0 0 0.5em black;
+ margin-bottom:5px;
+}
+button:focus , input:focus{
+ outline:0;
+}
+button{
+ background-color:#ff3232;;
+ color:white;
+ border:none;
+ padding:11px;
+ border-radius:5px;
+ border:1px solid #ff3232;;
+ transition:all 0.5s;
+}
+button:focus{
+ background-color:#121212;
+ border-color:#ff0000;
+ color:#ff0000;
+}
+.page{
+ padding:10px;
+}
+.right{
+ text-align:right;
+}
+.input{
+ position:relative;;
+ margin:5px 0px 5px 0px;
+}
+.input.invalid label{
+ color:red;
+}
+.input.invalid input{
+ border-color:red;
+}
+.input-focus input{
+ border-bottom:3px solid #ff3232;
+ border-radius:10px;
+}
+.input-focus label{
+ top:-12px;
+ color:#ff0000;
+ font-size:12px;
+}
+input{
+ padding:10px;
+ width:100%;
+ border:none;
+ box-sizing:border-box;
+ border-bottom:1px solid DarkGrey;
+ transition:all 0.5s;
+}
+label{
+ position:absolute;
+ left:10px;
+ top:10px;
+ color:DarkGrey;
+ transition:all 0.5s;
+
+}
+video{
+ width:100%;
+ display:none;
+}
+a{
+ color:inherit;
+ background-color:inherit;
+}
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: underline;
+}

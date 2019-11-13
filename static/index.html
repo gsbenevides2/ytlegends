@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+ <head>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta charset="UTF-8"/>
+	<meta name="theme-color" content="#ff0000"/>
+	<title>YTLegends</title>
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="manifest" href="manifest.json">
+	<link rel="stylesheet" href="styles.css"/>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="scripts.js"></script>
+ </head>
+ <body>
+	<div class="topAppBar"><a href="/">YTLegends</a></div>
+	<form id="page-urlForm" autocomplete="off" class="page"  action="javascript:urlSubmit()">
+	 <div class="input">
+		<input id="url" type="text"/>
+		<label for="url">Insira a url:</label>
+	 </div>
+	 <div class="right">
+		<button type="submit">Proximo</button>
+	 </div>
+	</form>
+	<table id="page-selectLegend" class="page"></table>
+	<div id="page-videoPlayer" class="page">
+	 <video width="100%" height="auto" controls></video>
+	</div>
+ </body>
+</html>
