@@ -5,5 +5,6 @@ YTLegends is a progressive Web application (PWA), where a person can easily get,
 For this it gets an existing legend of the video exclusively translated. This feature is already available on YouTube to Desktop. But to facilitate access to the Mobile She has been developed.
 
 To view this live project, go to:
+[Heroku App](https://ytlegends.herokuapp.com/)
 
 Developed with ❤️. Thank you.
