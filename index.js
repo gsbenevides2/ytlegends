@@ -29,14 +29,10 @@ app.get("/legend",(req,res)=>{
 app.get('/downloadmp4', (req,res) => {
  const url = req.query.url
  console.log("Solicitado:",url)
- try{
-	res.header('Content-Disposition', 'attachment; filename="video.mp4"')
-	ytdl(url, {
-	 format: 'mp4'
-	}).pipe(res)
- }catch(e){
-	res.status(400).send("Erro")
- }
+ ytdl.getInfo(url,(err,info)=>{
+	if(err) res.status(400).send("Erro")
+	else res.redirect(info.formats[0].url)
+ })
 })
 app.listen(process.env.PORT || 3000,()=>{
  console.log("Servidor iniciado")
