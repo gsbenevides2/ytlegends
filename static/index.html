@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
  <head>
+	<script src="//cdn.jsdelivr.net/npm/eruda"></script>
+	<script>eruda.init();</script>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta charset="UTF-8"/>
 	<meta name="theme-color" content="#ff0000"/>
@@ -20,10 +22,16 @@
 		<label for="url">Insira a url:</label>
 	 </div>
 	 <div class="right">
+		<button type="button" onclick="areaDeTransferencia()" class="svg">
+		 <svg xmlns="http://www.w3.org/2000/svg"  width="22" height="22" viewBox="0 0 48 48"><path d="M38 4h-8.37c-.82-2.32-3.02-4-5.63-4s-4.81 1.68-5.63 4H10C7.79 4 6 5.79 6 8v32c0 2.21 1.79 4 4 4h28c2.21 0 4-1.79 4-4V8c0-2.21-1.79-4-4-4zM24 4c1.1 0 2 .89 2 2s-.9 2-2 2-2-.89-2-2 .9-2 2-2zm14 36H10V8h4v6h20V8h4v32z"/></svg>
+		</button>
 		<button type="submit">Proximo</button>
 	 </div>
 	</form>
-	<table id="page-selectLegend" class="page"></table>
+	<div class="page" id="page-selectLegend">
+	 <h4>Selecione uma lingua:</h4>
+	 <table></table>
+	</div>
 	<div id="page-videoPlayer" class="page">
 	 <video width="100%" height="auto" controls></video>
 	</div>

@@ -4,8 +4,15 @@ $(document).ready(()=>{
  pages.urlForm = $("#page-urlForm")
  pages.selectLegend = $("#page-selectLegend")
  pages.videoPlayer = $("#page-videoPlayer")
- pages.videoPlayer.fadeOut(500)
- pages.selectLegend.fadeOut(500)
+ pages.urlForm.css("display","block")
+ pages.urlForm.animate({
+	opacity:1
+ },500)
+ const url = new URL(window.location.href)
+ if(url.searchParams.has("text")){
+	$("#url").parent().addClass("input-focus")
+	$("#url").val(url.searchParams.get("text"))
+ }
  if("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js")
  const inputsDiv = $(".input")
  for(let inputDiv of inputsDiv){
@@ -33,8 +40,11 @@ function urlSubmit(){
 		 <td onclick="selectLegend(${indice})">${legend.name || legend.lang_translated}</td>
 		</tr>
 		`).join("")
-	 pages.selectLegend.html(table)
-	 pages.urlForm.fadeOut(500,()=>pages.selectLegend.fadeIn(500))
+	 pages.selectLegend.find("table").html(table)
+	 pages.urlForm.fadeOut(500,()=>{
+		pages.selectLegend.css("display","block")
+		pages.selectLegend.animate({opacity:1},500)
+	 })
 
 	}
 	else{
@@ -53,5 +63,21 @@ function selectLegend(e){
  `
  video.html(html)
  video.show()
- pages.selectLegend.fadeOut(500,()=>pages.videoPlayer.fadeIn(500))
+ pages.selectLegend.fadeOut(500,()=>{
+	pages.videoPlayer.css("display","block")
+	pages.videoPlayer.animate({opacity:1},500)
+ })
+}
+function areaDeTransferencia(){
+ if('clipboard' in navigator){
+	navigator.clipboard.readText()
+	 .then(text=>{
+		$("#url").parent().addClass("input-focus")
+		$("#url").val(text)
+	 })
+	 .catch(error=>{
+		if(error.name === "NotAllowedError") alert("Por favor vá as configuraçōes do navegador e libere o acesso a area de transferencia.")
+	 })
+ }
+ else alert("Seu navegador não suporta Clipboard API. Por favor atualize seu navegador")
 }

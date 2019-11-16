@@ -26,6 +26,7 @@ button:focus , input:focus{
  outline:0;
 }
 button{
+ margin:0px 2px 0px 2px;
  background-color:#ff3232;;
  color:white;
  border:none;
@@ -34,16 +35,29 @@ button{
  border:1px solid #ff3232;;
  transition:all 0.5s;
 }
+button.svg{
+ padding:7px;
+}
+svg{
+ background-color:inherit;
+ fill:currentColor;
+}
+button:focus svg{
+ fill:#ff0000;
+}
 button:focus{
  background-color:#121212;
  border-color:#ff0000;
  color:#ff0000;
 }
 .page{
+ display:none;
+ opacity:0;
  padding:10px;
 }
 .right{
- text-align:right;
+ display:flex;
+ justify-content: flex-end;
 }
 .input{
  position:relative;;
@@ -89,17 +103,39 @@ a{
  background-color:inherit;
 }
 a:link {
-  text-decoration: none;
+ text-decoration: none;
 }
 
 a:visited {
-  text-decoration: none;
+ text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;
+ text-decoration: underline;
 }
 
 a:active {
-  text-decoration: underline;
+ text-decoration: underline;
+}
+#page-selectLegend{
+ padding:0px
+}
+#page-selectLegend h4{
+ padding-left:10px;
+}
+table{
+ margin:12px;
+ box-sizing:border-box;
+}
+td{
+ width:100%;
+ padding:12px;
+ transition:all 0.2s;
+}
+td:hover{
+ background-color:#ff0000;
+}
+table,td{
+ border:1px solid white;
+ border-collapse:collapse;
 }
